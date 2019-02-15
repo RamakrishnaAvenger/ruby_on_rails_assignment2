@@ -1,0 +1,26 @@
+<h1>New Employee</h1>
+
+<%= form_with scope: :employee, url: employees_path,local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= form.label :project_name %><br>
+    <%= form.select :project_name, ["RG", "TC", "RAVEN", "SAMPLE", "Other"], :prompt => 'Select One',:class => 'genForm_dropBox' %>
+  </p>
+ <p>
+    <%= form.label :lead_name %><br>
+    <%= form.select :lead_name, ["vivek","test lead","test1 lead","s1 lead","s2 lead","kranthi"], :prompt => 'Select One',:class => 'genForm_dropBox' %>
+  </p>
+  <p>
+    <%= form.label :skills %><br>
+    <%= form.text_field :skills %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<br><br>
+<%= link_to 'Back', employees_path %>
